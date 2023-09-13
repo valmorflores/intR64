@@ -6,6 +6,9 @@ dart compile exe main.dart -o ..\bin\intR64.exe
 
 # Desafio
 
+Desafio publicado em:
+https://github.com/aripiprazole/rinha-de-compiler
+
 # Todo
 - Fazer pegar do diretorio correto os arquivos
 - Criar um docker compativel para o projeto
