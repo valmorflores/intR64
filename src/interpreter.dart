@@ -95,20 +95,22 @@ class Interpreter {
           return left - right;
         case 'Mul':
           return left * right;
-        case 'And':
-          return left && right;
         case 'Div':
           return left / right;
         case 'Rem':
           return left % right;
         case 'Eq':
           return left == right;
+        case 'Neq':
+          return left != right;
         case 'Gt':
           return left > right;
         case 'Lte':
           return left <= right;
         case 'Gte':
           return left >= right;
+        case 'And':
+          return left && right;
         case 'Or':
           return left || right;
         default:
