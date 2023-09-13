@@ -13,6 +13,7 @@ dart compile exe main.dart -o ..\bin\intR64.exe
 - Testar com os demais scripts disponíveis
 - Adicionar funcionalidades
 - Compilar em Linux
+- Fazer pegar pelo prompt nome do programa a executar
 
 # Copie mas não use
 Este é um projeto absultamente experimental. Copie somente para fins de experimentação, mas, jamais em produção.
