@@ -8,6 +8,11 @@ class VarExpr extends Expr {
   VarExpr(this.name);
 }
 
+class StrExpr extends Expr {
+  final String value;
+  StrExpr(this.value);
+}
+
 class IntExpr extends Expr {
   final int value;
   IntExpr(this.value);

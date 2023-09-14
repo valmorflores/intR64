@@ -29,6 +29,8 @@ class Interpreter {
     switch (kind) {
       case 'Var':
         return VarExpr(json['text']);
+      case 'Str':
+        return StrExpr(json['value']);
       case 'Int':
         return IntExpr(json['value']);
       case 'Print':
@@ -73,6 +75,8 @@ class Interpreter {
   dynamic evaluate(Expr expr, Map<String, dynamic> environment) {
     if (expr is VarExpr) {
       return environment[expr.name];
+    } else if (expr is StrExpr) {
+      return expr.value;
     } else if (expr is IntExpr) {
       return expr.value;
     } else if (expr is BinOpExpr) {
