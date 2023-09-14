@@ -2,6 +2,7 @@
 Interepretador / Rinha de Compiladores / Escrito em Dart
 
 # Compilação em Windows
+Vá na pasta src ;)
 dart compile exe main.dart -o ..\bin\intR64.exe
 
 # Desafio
