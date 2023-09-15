@@ -14,12 +14,12 @@ https://github.com/aripiprazole/rinha-de-compiler
 - Fazer pegar do diretorio correto os arquivos
 - Criar um docker compativel para o projeto
 - Analisar os critérios
-- Testar com os demais scripts disponíveis
+- ~~Testar com os demais scripts disponíveis~~
 - Adicionar funcionalidades
 - Compilar em Linux
 - Fazer pegar pelo prompt nome do programa a executar
 
-# Copie mas não use
+# Copie, ~~mas não use~~ mas, use com cuidado
 Este é um projeto absultamente experimental. Copie somente para fins de experimentação, mas, jamais em produção.
 
 
