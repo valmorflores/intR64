@@ -1,4 +1,4 @@
-# intR64
+# intR64 (interpretador Rinha 64)
 Interepretador / Rinha de Compiladores / Escrito em Dart
 
 # Compilação em Windows
