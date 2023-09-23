@@ -6,11 +6,11 @@ Interepretador / Rinha de Compiladores / Escrito em Dart
 Estrutura e configuração Dart e Docker 
 <https://github.com/marleirafa>
 
-# Executar em linux
-Para executar use o ./execute.sh
-
 Desenvolvimento 
 <https://github.com/valmorflores>
+
+# Executar em linux
+Para executar use o ./execute.sh
 
 # Compilação em Windows (Direta, sem docker)
 - Vá na pasta src ;)
