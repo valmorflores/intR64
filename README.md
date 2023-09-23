@@ -1,6 +1,11 @@
 # intR64 (interpretador Rinha 64)
 Interepretador / Rinha de Compiladores / Escrito em Dart
 
+# Envolvidos
+
+Estrutura e configuração Dart e Docker <https://github.com/marleirafa>
+Desenvolvimento <https://github.com/valmorflores>
+
 # Compilação em Windows
 - Vá na pasta src ;)
 - dart compile exe main.dart -o ..\bin\intR64.exe
