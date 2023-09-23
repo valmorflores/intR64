@@ -6,10 +6,13 @@ Interepretador / Rinha de Compiladores / Escrito em Dart
 Estrutura e configuração Dart e Docker 
 <https://github.com/marleirafa>
 
+# Executar em linux
+Para executar use o ./execute.sh
+
 Desenvolvimento 
 <https://github.com/valmorflores>
 
-# Compilação em Windows
+# Compilação em Windows (Direta, sem docker)
 - Vá na pasta src ;)
 - dart compile exe main.dart -o ..\bin\intR64.exe
 
