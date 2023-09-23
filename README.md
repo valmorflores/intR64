@@ -19,12 +19,12 @@ Desafio publicado em:
 https://github.com/aripiprazole/rinha-de-compiler
 
 # Todo
-- Fazer pegar do diretorio correto os arquivos
-- Criar um docker compativel para o projeto
-- Analisar os critérios
+- ~~Fazer pegar do diretorio correto os arquivos~~
+- ~~Criar um docker compativel para o projeto~~
+- ~~Analisar os critérios~~
 - ~~Testar com os demais scripts disponíveis~~
-- Adicionar funcionalidades
-- Compilar em Linux
+- ~~Adicionar funcionalidades~~
+- ~~Compilar em Linux~~
 - Fazer pegar pelo prompt nome do programa a executar
 
 # Copie, ~~mas não use~~ mas, use com cuidado
