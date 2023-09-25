@@ -1,0 +1,11 @@
+name: intR64
+description: A basic interpreter built for the Rinha de Compiler event.
+version: 1.0.0
+repository: https://github.com/valmorflores/intR64/
+
+environment:
+  sdk: ^3.1.2
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
