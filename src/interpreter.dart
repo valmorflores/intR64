@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'expression_class.dart';
@@ -71,6 +72,19 @@ class Interpreter {
     }
   }
 
+  // isNumber the value
+  bool isNumber(dynamic value) {
+    if (value == null) {
+      return false;
+    }
+    if (value is num || value is String) {
+      final stringValue = value.toString();
+      final numericRegex = RegExp(r'^[0-9]+$');
+      return numericRegex.hasMatch(stringValue);
+    }
+    return false;
+ }
+
   // Run and evaluate a expression, get Expr and evironment
   dynamic evaluate(Expr expr, Map<String, dynamic> environment) {
     if (expr is VarExpr) {
@@ -81,7 +95,10 @@ class Interpreter {
       return expr.value;
     } else if (expr is BinOpExpr) {
       final left = evaluate(expr.left, environment);
-      final right = evaluate(expr.right, environment);
+      final right = evaluate(expr.right, environment);     
+      if ((!isNumber(left)) || (!isNumber(right))){
+        return '$left$right';
+      }
       switch (expr.op) {
         case '+':
           return left + right;
