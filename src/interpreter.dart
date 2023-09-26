@@ -96,7 +96,9 @@ class Interpreter {
     } else if (expr is BinOpExpr) {
       final left = evaluate(expr.left, environment);
       final right = evaluate(expr.right, environment);     
-      if ((!isNumber(left)) || (!isNumber(right))){
+      // Left or right is bool
+      if (left is bool || right is bool){
+      } else if ((!isNumber(left)) || (!isNumber(right))){
         return '$left$right';
       }
       switch (expr.op) {
