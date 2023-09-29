@@ -59,6 +59,9 @@ class Interpreter {
       case 'Second':
         final tuple = parseExpression(json['value']);
         return SecondExpr(tuple);
+      case 'Bool':
+        final value = json['value'] as bool;
+        return BoolExpr(value);
       case 'If':
         final condition = parseExpression(json['condition']);
         final thenBranch = parseExpression(json['then']);
@@ -161,6 +164,8 @@ class Interpreter {
       } else {
         throw Exception('Evaluate Error - [If] condition must be a boolean');
       }
+    } else if (expr is BoolExpr) {
+      return expr.value;
     } else if (expr is TupleExpr) {
       final elements = expr.elements.map((element) => evaluate(element, environment)).toList();
       return elements;

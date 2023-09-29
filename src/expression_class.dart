@@ -71,3 +71,8 @@ class SecondExpr extends Expr {
   SecondExpr(this.tuple);
 }
 
+class BoolExpr extends Expr {
+  final bool value;
+  BoolExpr(this.value);
+}
+
