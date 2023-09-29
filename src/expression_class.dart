@@ -55,3 +55,19 @@ class LetExpr extends Expr {
   final Expr next;
   LetExpr(this.name, this.value, this.next);
 }
+
+class TupleExpr extends Expr {
+  final List<Expr> elements;
+  TupleExpr(this.elements);
+}
+
+class FirstExpr extends Expr {
+  final Expr tuple;
+  FirstExpr(this.tuple);
+}
+
+class SecondExpr extends Expr {
+  final Expr tuple;
+  SecondExpr(this.tuple);
+}
+

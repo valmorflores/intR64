@@ -34,6 +34,12 @@ class Interpreter {
         return StrExpr(json['value']);
       case 'Int':
         return IntExpr(json['value']);
+      case 'Tuple':
+        List<Expr> elementList = [
+          parseExpression(json['first']),
+          parseExpression(json['second'])
+        ];
+        return TupleExpr(elementList);
       case 'Print':
         final value = parseExpression(json['value']);
         return PrintExpr(value);
@@ -47,6 +53,12 @@ class Interpreter {
         final left = parseExpression(json['lhs']);
         final right = parseExpression(json['rhs']);
         return BinOpExpr(op, left, right);
+      case 'First':
+        final tuple = parseExpression(json['value']);
+        return FirstExpr(tuple);
+      case 'Second':
+        final tuple = parseExpression(json['value']);
+        return SecondExpr(tuple);
       case 'If':
         final condition = parseExpression(json['condition']);
         final thenBranch = parseExpression(json['then']);
@@ -83,7 +95,7 @@ class Interpreter {
       return numericRegex.hasMatch(stringValue);
     }
     return false;
- }
+  }
 
   // Run and evaluate a expression, get Expr and evironment
   dynamic evaluate(Expr expr, Map<String, dynamic> environment) {
@@ -95,10 +107,10 @@ class Interpreter {
       return expr.value;
     } else if (expr is BinOpExpr) {
       final left = evaluate(expr.left, environment);
-      final right = evaluate(expr.right, environment);     
+      final right = evaluate(expr.right, environment);
       // Left or right is bool
-      if (left is bool || right is bool){
-      } else if ((!isNumber(left)) || (!isNumber(right))){
+      if (left is bool || right is bool) {
+      } else if ((!isNumber(left)) || (!isNumber(right))) {
         return '$left$right';
       }
       switch (expr.op) {
@@ -148,6 +160,25 @@ class Interpreter {
             : evaluate(expr.elseBranch, environment);
       } else {
         throw Exception('Evaluate Error - [If] condition must be a boolean');
+      }
+    } else if (expr is TupleExpr) {
+      final elements = expr.elements.map((element) => evaluate(element, environment)).toList();
+      return elements;
+    } else if (expr is FirstExpr) {
+      final tuple = evaluate(expr.tuple, environment);
+      if (tuple is List && tuple.length == 2) {
+        return tuple[0];
+      } else {
+        print('Evaluate Error - Expected a tuple for the first operation');
+        return null;
+      }
+    } else if (expr is SecondExpr) {
+      final tuple = evaluate(expr.tuple, environment);
+      if (tuple is List && tuple.length == 2) {
+        return tuple[1];
+      } else {
+        print('Evaluate Error - Expected a tuple for the second operation');
+        return null;
       }
     } else if (expr is FuncExpr) {
       return (List<dynamic> args) {
